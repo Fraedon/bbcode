@@ -535,7 +535,7 @@ class Parser (object):
             token_type, tag_name, tag_opts, token_text = tokens[idx]
             if token_type == self.TOKEN_TAG_START:
                 render_func, tag = self.recognized_tags[tag_name]
-                context["tag"] = token_text
+                context["tag"] = token_text + tokens[idx+1][3] + tokens[idx+2][3]
                 if tag.standalone:
                     formatted.append(render_func(tag_name, None, tag_opts, parent, context))
                 else:
