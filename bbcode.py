@@ -187,7 +187,7 @@ class Parser (object):
             swallow_trailing_newline=True)
         self.add_simple_formatter('code', '<code>%(value)s</code>', render_embedded=False, transform_newlines=False,
             swallow_trailing_newline=True, replace_cosmetic=False)
-        self.add_simple_formatter('center', '<div style="text-align:center;">%(value)s</div>', swallow_trailing_newline=True)
+        self.add_simple_formatter('center', '<div style="text-align:center;">%(value)s</div>', swallow_trailing_newline=True, strip=True)
 
         def _render_color(name, value, options, parent, context):
             if 'color' in options:
