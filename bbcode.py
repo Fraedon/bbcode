@@ -545,7 +545,7 @@ class Parser (object):
                     # First, find the extent of this tag's tokens.
                     end, consume = self._find_closing_token(tag, tokens, idx + 1)
                     subtokens = tokens[idx + 1:end]
-                    # If the end tag should not be consumed, back up one (after grabbing the subtokens).
+                    # If the end tag should not be consumed, back up one (after grabbing the subtokens)
                     if not consume:
                         end = end - 1
                     if tag.render_embedded and depth < self.max_tag_depth:
